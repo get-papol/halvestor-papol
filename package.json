@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": ">=18.17.0"
+    "node": "18.x"
   },
   "name": "halvestor-papol",
   "description": "Halvestor Papol - Modern TypeScript/Next.js application",
