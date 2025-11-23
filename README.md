@@ -1,53 +1,99 @@
-<p align="center">
-  <img src="public/screenshot.png" alt="Screenshot">
-</p>
+# Halvestor Papol - Modern Landing Page
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
-  <img alt="License" src="https://img.shields.io/github/license/jkytoela/next-startd?style=for-the-badge&color=24B36B&labelColor=000000">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/jkytoela/next-startd?style=for-the-badge&color=24B36B&labelColor=000000">
-</p>
-<br>
+This is a modern Next.js landing page application that has been migrated from Twind to Tailwind CSS and updated for Vercel deployment.
 
-A free Next.js TypeScript landing page template for SaaS products, online services and more.
+## 🚀 Features
 
-<a href="https://next-startd.vercel.app">Live demo</a>
+- ⚡️ **Next.js 14** - Latest version with performance optimizations
+- 🎨 **Tailwind CSS** - Modern utility-first CSS framework
+- 📱 **Responsive Design** - Works on all device sizes
+- 🔧 **TypeScript** - Full type safety
+- 🌐 **SEO Optimized** - Built-in SEO with next-seo
+- ⚡ **Performance** - Optimized for speed and Core Web Vitals
+- 🚀 **Vercel Ready** - Configured for seamless Vercel deployment
 
-- ⚡ **Next.js** — The React Framework
-- 🔥 **next-seo** — Manage SEO easily
-- 💡 **Twind** — The smallest, fastest, most feature complete Tailwind-in-JS solution in existence
-- 📏 **ESLint** — Pluggable JavaScript linter
-- 💖 **Prettier** — Opinionated Code Formatter
-- 🐶 **Husky** — Use git hooks with ease
-- 📄 **Commitizen** — Conventional commit messages CLI
-- 🚓 **Commitlint** — Lint commit messages
-- 🖌 **Renovate** — Dependency update tool
-- 🚫 **lint-staged** — Run linters against staged git files
-- 🗂 **Absolute import** — Import folders and files using the `@` prefix
+## 🛠️ Technology Stack
 
-## 🚀 Getting started
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS 3
+- **Language**: TypeScript
+- **Icons**: SVG with @svgr/webpack
+- **Font**: Inter (Google Fonts)
+- **Deployment**: Vercel
 
-If you're logged in, easiest way to get started is to [click here](https://github.com/jkytoela/next-startd/generate).
+## 📦 Installation
 
-Run the following commands inside the project folder:
+1. **Install dependencies**:
 
-1. `yarn`
-2. `yarn dev`
+   ```bash
+   npm install
+   ```
 
-To view the project open `http://localhost:3000`
+2. **Run development server**:
 
+   ```bash
+   npm run dev
+   ```
 
-## 🤝 Contributing
+3. **Build for production**:
 
-1. Fork this repository
-2. Create your branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
+   ```bash
+   npm run build
+   ```
 
-Consider contributing to the original TypeScript Starter, which you can find [here](https://github.com/jpedroschmitz).
+4. **Start production server**:
+   ```bash
+   npm start
+   ```
 
-**After your pull request is merged**, you can safely delete your branch.
+## 🚀 Deployment to Vercel
 
-## 📝 License
+### Automatic Deployment (Recommended)
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
+1. **Push to GitHub**:
+
+   ```bash
+   git add .
+   git commit -m "Ready for Vercel deployment"
+   git push origin main
+   ```
+
+2. **Deploy to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Connect your GitHub repository
+   - Vercel will automatically detect Next.js and deploy
+
+### Manual Deployment
+
+1. **Install Vercel CLI**:
+
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy**:
+   ```bash
+   vercel
+   ```
+
+## ✅ Migration Completed
+
+- ✅ Migrated from Twind to Tailwind CSS
+- ✅ Updated to Next.js 14
+- ✅ Updated all dependencies to latest versions
+- ✅ Fixed all TypeScript errors
+- ✅ Fixed ESLint configuration
+- ✅ Updated components to use Next.js Image and Link
+- ✅ Added Vercel deployment configuration
+- ✅ Build passing successfully
+
+## 🐛 Issues Fixed
+
+- ✅ Removed Twind dependency conflicts
+- ✅ Fixed TypeScript import errors
+- ✅ Updated ESLint configuration for Next.js 14
+- ✅ Fixed SVG imports with @svgr/webpack
+- ✅ Replaced anchor tags with Next.js Link components
+- ✅ Fixed CSS-in-JS syntax errors
+
+**Ready for Vercel deployment! 🚀**
