@@ -1,5 +1,5 @@
 const CheckIcon = () => (
-  <svg className="h-6 w-6 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+  <svg className="h-6 w-6 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
     <path
       fillRule="evenodd"
       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -9,69 +9,73 @@ const CheckIcon = () => (
 );
 
 const FeatureSection = () => (
-  <section className="bg-white pb-6">
+  <section className="bg-white py-20">
     <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-      <div className="container mx-auto px-6 p-6 bg-white">
+      <div className="container mx-auto px-6">
         <div className="mb-16 text-center">
-          <h4 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h4>
-          <p className="mt-2 text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">How we change the game</p>
+          <h4 className="text-base text-primary-600 font-semibold tracking-wide uppercase">Our Solution</h4>
+          <p className="mt-2 text-4xl lg:text-6xl font-bold tracking-tight text-secondary-900">
+            How Halvestor Changes the Game
+          </p>
+          <p className="mt-4 text-lg text-secondary-600 max-w-3xl mx-auto">
+            We&apos;ve built the first platform specifically designed for Muslim investors, addressing every challenge
+            you face.
+          </p>
         </div>
-        <div className="flex flex-wrap my-12">
-          <div className="w-full border-b md:w-1/2 md:border-r lg:w-1/3 p-8">
-            <div className="flex items-center mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="p-6 border border-secondary-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
               <CheckIcon />
-              <div className="ml-4 text-xl">Increase sales</div>
+              <div className="ml-4 text-xl font-semibold text-secondary-900">100% Halal Verified</div>
             </div>
-            <p className="leading-loose text-gray-500">
-              Consectetur pariatur irure exercitation sit amet id consectetur consecteturmagna et Lorem labore qui
-              velit.
+            <p className="leading-relaxed text-secondary-600">
+              Every investment option is pre-screened and certified as Sharia-compliant by Islamic finance scholars.
             </p>
           </div>
-          <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r p-8">
-            <div className="flex items-center mb-6">
+          <div className="p-6 border border-secondary-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
               <CheckIcon />
-              <div className="ml-4 text-xl">Enterprise-ready</div>
+              <div className="ml-4 text-xl font-semibold text-secondary-900">Complete Transparency</div>
             </div>
-            <p className="leading-loose text-gray-500 ">
-              Labore duis pariatur est exercitation laboris cupidatat amet cillum. Amet nisi ullamco.
+            <p className="leading-relaxed text-secondary-600">
+              See detailed information about company activities, board members, and business practices before investing.
             </p>
           </div>
-          <div className="w-full border-b md:w-1/2 md:border-r lg:w-1/3 lg:border-r-0 p-8">
-            <div className="flex items-center mb-6">
+          <div className="p-6 border border-secondary-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
               <CheckIcon />
-              <div className="ml-4 text-xl">Unlimited growth</div>
+              <div className="ml-4 text-xl font-semibold text-secondary-900">No Hidden Fees</div>
             </div>
-            <p className="leading-loose text-gray-500">
-              Elit deserunt nisi esse duis cupidatat proident sit minim mollit officia pariatur incididunt in tempor.
+            <p className="leading-relaxed text-secondary-600">
+              Simple, transparent pricing with no subscription fees. Pay only when you invest, with competitive rates.
             </p>
           </div>
-          <div className="w-full border-b md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-8">
-            <div className="flex items-center mb-6">
+          <div className="p-6 border border-secondary-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
               <CheckIcon />
-              <div className="ml-4 text-xl">Recommended by experts</div>
+              <div className="ml-4 text-xl font-semibold text-secondary-900">Expert Guidance</div>
             </div>
-            <p className="leading-loose text-gray-500">
-              Velit sit tempor pariatur quis pariatur incididunt culpa dolor voluptate officia incididunt velit dolore.
+            <p className="leading-relaxed text-secondary-600">
+              Access to Islamic finance experts who can help you make informed investment decisions aligned with your
+              faith.
             </p>
           </div>
-          <div className="w-full border-b md:w-1/2 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-8">
-            <div className="flex items-center mb-6">
+          <div className="p-6 border border-secondary-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
               <CheckIcon />
-              <div className="ml-4 text-xl">Modern platform</div>
+              <div className="ml-4 text-xl font-semibold text-secondary-900">Wide Selection</div>
             </div>
-            <p className="leading-loose text-gray-500">
-              Laboris elit consectetur sint nisi eu mollit proident sit magna velit adipisicing consequat amet
-              reprehenderit.
+            <p className="leading-relaxed text-secondary-600">
+              Diverse portfolio of Sharia-compliant stocks, ETFs, and investment opportunities across various sectors.
             </p>
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/3 p-8">
-            <div className="flex items-center mb-6">
+          <div className="p-6 border border-secondary-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
               <CheckIcon />
-              <div className="ml-4 text-xl">Integrations</div>
+              <div className="ml-4 text-xl font-semibold text-secondary-900">Easy to Use</div>
             </div>
-            <p className="leading-loose text-gray-500">
-              Nostrud excepteur incididunt proident sit nulla ipsum sunt nostrud est esse adipisicing irure officia
-              consectetur.
+            <p className="leading-relaxed text-secondary-600">
+              Intuitive platform designed for both beginners and experienced investors with clear halal indicators.
             </p>
           </div>
         </div>

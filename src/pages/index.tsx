@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <Page>
       <NextSeo
-        title="Alaiso - Revenue scaled by unified GTM & RevOps"
-        description="Your dedicated growth partner, delivering smart campaigns, sales automation, and CRM workflows."
+        title="Halvestor - Sharia-Compliant Investing Made Simple"
+        description="The first platform designed specifically for Muslim investors. Discover halal investment opportunities with complete transparency and religious compliance."
       />
       <Hero />
       <main>

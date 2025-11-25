@@ -1,60 +1,66 @@
 const listItems = [
   {
-    title: `Designers`,
-    description: `Officia et fugiat mollit qui. Dolor elit aliqua voluptate ipsum
-    excepteur cillum consequat consectetur duis magna qui eu consequat occaecat.
-    Deserunt nisi sit.`,
+    title: `86% prefer alternatives to subscriptions`,
+    description: `Most respondents prefer anything other than a subscription-based model when it comes to investing platforms.`,
+    source: `Halvestor Survey Statistic`,
   },
   {
-    title: `Developers`,
-    description: `Pariatur consectetur laboris exercitation duis laboris.
-    Commodo duis fugiat magna fugiat et ut anim elit. Tempor aute ex qui
-    tempor tempor.`,
+    title: `Lack of transparency about companies`,
+    description: `"I have to constantly check the companies I&apos;m investing in to make sure they don&apos;t have anything that is not permissible to my religion."`,
+    source: `Halvestor Survey Respondent`,
   },
   {
-    title: `Product owners`,
-    description: `Ullamco consectetur ipsum eiusmod nisi adipisicing sint anim
-    dolore aute excepteur. Voluptate ea ullamco sunt eu elit qui aliquip.
-    Adipisicing.`,
+    title: `Limited investment information`,
+    description: `"Not much info on founders/board members, who companies align themselves with or donate to."`,
+    source: `Halvestor Survey Respondent`,
+  },
+  {
+    title: `Difficulty identifying halal stocks`,
+    description: `"With certain platforms, you don&apos;t see which stocks are specifically being invested in."`,
+    source: `Halvestor Survey Respondent`,
+  },
+  {
+    title: `High fees and limited options`,
+    description: `"High deposit and withdrawal fees" and "Limited range of investments" are common concerns.`,
+    source: `Halvestor Survey Respondent`,
+  },
+  {
+    title: `Complex compliance research`,
+    description: `"It&apos;s difficult to read through stocks and just focus on Shariah compliant stocks."`,
+    source: `Halvestor Survey Respondent`,
   },
 ];
 
 const ListSection = () => (
-  <section className="lg:py-28 pt-28 overflow-hidden">
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white">
+  <section id="features" className="lg:py-28 pt-28 overflow-hidden bg-secondary-50">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
       <div className="mb-16 text-center">
-        <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Grow your revenue</h2>
-        <p className="mt-2 pb-4 text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">Transform your business</p>
+        <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">The Challenge</h2>
+        <p className="mt-2 pb-4 text-4xl lg:text-6xl font-bold tracking-tight text-secondary-900">
+          What&apos;s the problem?
+        </p>
+        <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          Muslim investors face unique challenges when trying to invest according to their faith. Here&apos;s what our
+          research revealed:
+        </p>
       </div>
-      <div className="flex flex-wrap -mx-8 items-center">
-        <div className="w-full lg:w-1/2 px-8">
-          <ul className="space-y-12">
-            {listItems.map((item, index) => (
-              <li className="flex -mx-4" key={item.title}>
-                <div className="px-4">
-                  <span
-                    className="flex w-16 h-16 mx-auto items-center
-                      justify-center text-2xl font-bold rounded-full
-                      bg-blue-50 text-blue-500"
-                  >
-                    {index + 1}
-                  </span>
-                </div>
-                <div className="px-4">
-                  <h3 className="my-4 text-xl font-semibold">{item.title}</h3>
-                  <p className="text-gray-500 leading-loose">{item.description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="w-full lg:w-1/2 px-8">
-          <div className="lg:mb-12 lg:mb-0 pb-12 lg:pb-0 mt-16 lg:mt-0 mx-6 lg:mx-0">
-            <div className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg p-12 h-96 flex items-center justify-center">
-              <p className="text-6xl text-indigo-300">📊</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {listItems.map((item, index) => (
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-secondary-200" key={index}>
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <span className="flex w-12 h-12 items-center justify-center text-lg font-bold rounded-full bg-primary-100 text-primary-600">
+                  {index + 1}
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">{item.title}</h3>
+                <p className="text-secondary-600 leading-relaxed mb-3">{item.description}</p>
+                <p className="text-sm text-primary-600 font-medium">— {item.source}</p>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
