@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
-import Header from '@/components/header';
+import Hero from '@/components/hero';
 import VideoSection from '@/components/video-section';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <Page>
       <NextSeo
-        title="STARTD - Template"
-        description="A TypeScript/Next.js theme that includes everything you need to build amazing landing page!"
+        title="Alaiso - Revenue scaled by unified GTM & RevOps"
+        description="Your dedicated growth partner, delivering smart campaigns, sales automation, and CRM workflows."
       />
-      <Header />
+      <Hero />
       <main>
         <VideoSection />
         <ListSection />

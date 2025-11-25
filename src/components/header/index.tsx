@@ -1,8 +1,4 @@
 import Button from '@/components/button';
-import Netlify from '@/constants/svg/netlify.svg';
-import Nike from '@/constants/svg/nike.svg';
-import Figma from '@/constants/svg/figma.svg';
-import Aws from '@/constants/svg/aws.svg';
 
 const Header = () => (
   <header className="bg-white min-h-[calc(100vh-6rem)]">
@@ -24,11 +20,11 @@ const Header = () => (
     <div className="flex justify-center w-full">
       <div className="mt-4 w-full">
         <p className="font-mono uppercase text-center font-medium text-sm text-gray-600">These folks get it</p>
-        <div className="flex items-center justify-center mx-auto flex-wrap">
-          <Aws className="m-12 mb-8" width={120} />
-          <Netlify className="m-12" width={140} />
-          <Nike className="m-12" width={140} />
-          <Figma className="m-12" width={140} />
+        <div className="flex items-center justify-center mx-auto flex-wrap gap-8">
+          <div className="text-4xl font-bold text-gray-400">AWS</div>
+          <div className="text-4xl font-bold text-gray-400">Netlify</div>
+          <div className="text-4xl font-bold text-gray-400">Nike</div>
+          <div className="text-4xl font-bold text-gray-400">Figma</div>
         </div>
       </div>
     </div>

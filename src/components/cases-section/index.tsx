@@ -1,4 +1,15 @@
-import Arrow from '@/constants/svg/arrow.svg';
+const ArrowIcon = () => (
+  <svg className="h-6 w-6 fill-current ml-2" viewBox="0 0 24 24">
+    <path
+      d="M5 12h14M12 5l7 7-7 7"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const articles = [
   {
@@ -51,7 +62,7 @@ const CasesSection = () => (
             ))}
             <span className="-mt-8 pb-12 lg:mt-4 flex items-center text-xl text-indigo-400 cursor-pointer z-30 hover:text-indigo-600">
               See all case studies
-              <Arrow className="h-6 w-6 fill-current ml-2" />
+              <ArrowIcon />
             </span>
           </div>
         </div>

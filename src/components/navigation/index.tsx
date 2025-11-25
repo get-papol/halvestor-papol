@@ -1,48 +1,17 @@
 import { useState } from 'react';
-import Button from '@/components/button';
+import Link from 'next/link';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
   showMenu: boolean;
 }
+type Link = { label: string; href: string };
 
-type Link = {
-  label: string;
-  href: string;
-};
-
-const links = [
-  {
-    label: `Features`,
-    href: `/`,
-  },
-  {
-    label: `Testimonials`,
-    href: `/`,
-  },
-  {
-    label: `Pricing`,
-    href: `/`,
-  },
-  {
-    label: `Blog`,
-    href: `/`,
-  },
-];
-
-const secondaryLinks = [
-  {
-    label: `Contact sales`,
-    href: `/`,
-  },
-  {
-    label: `Log in`,
-    href: `/`,
-  },
-  {
-    label: `Get Started`,
-    href: `/`,
-  },
+const links: Link[] = [
+  { label: 'Services', href: '/' },
+  { label: 'Benefits', href: '/' },
+  { label: 'Our process', href: '/' },
+  { label: 'FAQs', href: '/' },
 ];
 
 const MenuButton = ({ toggleMenu, showMenu }: IMenuButton) => (
@@ -51,7 +20,7 @@ const MenuButton = ({ toggleMenu, showMenu }: IMenuButton) => (
     aria-controls="mobile-menu"
     aria-expanded={showMenu}
     onClick={toggleMenu}
-    className="p-2 text-gray-400"
+    className="p-2 text-gray-600"
   >
     <span className="sr-only">Open menu</span>
     {showMenu ? (
@@ -88,67 +57,41 @@ const MobileMenu = () => (
   <div className="md:hidden">
     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       {links.map((link: Link) => (
-        <a href={link.href} className="text-gray-500 block px-3 py-2 text-base font-medium" key={link.label}>
+        <Link key={link.label} href={link.href}>
           {link.label}
-        </a>
+        </Link>
       ))}
-    </div>
-    <div className="pt-4 pb-3 border-t border-gray-400">
-      <div className="px-2 space-y-1">
-        {secondaryLinks.map((link: Link) => (
-          <a
-            key={`mobile-${link.label}`}
-            href={link.href}
-            className="block px-3 py-2 text-base font-medium text-gray-500"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
     </div>
   </div>
 );
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const toggleMenu = () => setShowMenu(!showMenu);
+  const toggleMenu: React.MouseEventHandler<HTMLButtonElement> = () => setShowMenu((s) => !s);
 
   return (
-    <nav className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+    <header className="bg-white">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <img className="h-12 w-12" src="logo.svg" alt="logo" width={48} height={48} />
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {links.map((link: Link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
+            <Link href="/" className="text-xl font-bold">
+              Brand
+            </Link>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-4 flex items-center md:ml-6">
-              <Button modifier="border-0 mr-2">Contact sales</Button>
-              <Button modifier="border-0 mr-2">Log in</Button>
-              <Button primary>Get started</Button>
-            </div>
+          <div className="hidden md:flex space-x-8">
+            {links.map((link) => (
+              <Link key={link.label} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
           </div>
-          <div className="-mr-2 flex md:hidden">
-            <MenuButton showMenu={showMenu} toggleMenu={toggleMenu} />
+          <div className="md:hidden">
+            <MenuButton toggleMenu={toggleMenu} showMenu={showMenu} />
           </div>
         </div>
-      </div>
-      {showMenu ? <MobileMenu /> : null}
-    </nav>
+      </nav>
+      {showMenu && <MobileMenu />}
+    </header>
   );
 };
 

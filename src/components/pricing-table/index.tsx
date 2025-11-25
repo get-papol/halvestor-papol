@@ -1,5 +1,14 @@
-import Check from '@/constants/svg/check.svg';
 import Button from '@/components/button';
+
+const CheckIcon = () => (
+  <svg className="h-8 w-8 mr-3 mb-1 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+    <path
+      fillRule="evenodd"
+      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 
 const features = [
   `Laboris nulla`,
@@ -34,7 +43,7 @@ const PricingTable = () => (
               {features.map((feature) => (
                 <li className="flex items-center lg:col-span-1" key={feature}>
                   <div className="flex-shrink-0">
-                    <Check className="h-8 w-8 mr-3 mb-1" />
+                    <CheckIcon />
                   </div>
                   <p className="text-gray-600">{feature}</p>
                 </li>

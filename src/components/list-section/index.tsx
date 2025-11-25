@@ -1,5 +1,3 @@
-import FeatureSvg from '@/constants/svg/features.svg';
-
 const listItems = [
   {
     title: `Designers`,
@@ -52,7 +50,9 @@ const ListSection = () => (
         </div>
         <div className="w-full lg:w-1/2 px-8">
           <div className="lg:mb-12 lg:mb-0 pb-12 lg:pb-0 mt-16 lg:mt-0 mx-6 lg:mx-0">
-            <FeatureSvg width="100%" height="100%" />
+            <div className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg p-12 h-96 flex items-center justify-center">
+              <p className="text-6xl text-indigo-300">📊</p>
+            </div>
           </div>
         </div>
       </div>

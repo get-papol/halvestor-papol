@@ -1,5 +1,14 @@
 import { useState } from 'react';
-import Quote from '@/constants/svg/quote.svg';
+
+const QuoteIcon = () => (
+  <svg
+    className="w-16 md:w-12 left-0 md:-left-2 absolute top-0 pl-4 md:pl-0 text-gray-300"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+  >
+    <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2h2V8h-2zm12 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2h2V8h-2z" />
+  </svg>
+);
 
 const socialProofs = [
   {
@@ -43,7 +52,7 @@ const SocialProof = () => {
         <section>
           <figure>
             <div className="relative bg-white">
-              <Quote className="w-16 md:w-12 left-0 md:-left-2 absolute top-0 pl-4 md:pl-0 text-gray-300" />
+              <QuoteIcon />
               <div className="pt-20 px-6 md:px-0">
                 <p className="text-gray-600 text-base pb-6">{socialProofs[currentIndex].text}</p>
                 <div className="flex items-center justify-between">
