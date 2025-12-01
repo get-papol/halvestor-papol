@@ -1,0 +1,140 @@
+/* ===== Halvestor brand tokens (secondary blue = #1172af) ===== */
+:root {
+  --halvestor-main: #3b84f6;
+  --halvestor-dark: #1172af;    /* requested secondary blue */
+  --matt: #e1dfdb;
+  --hdr-text: #ffffff;
+  --muted: #e9eef2;
+}
+
+/* ===== Header: matt surface + blue variant ===== */
+.matt-header {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, background 220ms ease;
+  will-change: transform, box-shadow, background;
+}
+
+/* Blue header variant (primary surface uses secondary blue) */
+.matt-header--blue {
+  background: linear-gradient(180deg, rgba(17,114,175,0.98), rgba(17,114,175,0.9));
+  box-shadow: 0 14px 40px rgba(17,114,175,0.16), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* subtle lift on hover, and a slightly lighter top shade */
+.matt-header--blue:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, rgba(23,131,191,1), rgba(17,114,175,0.95));
+  box-shadow: 0 20px 52px rgba(17,114,175,0.22), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* logo text color tuned for blue background */
+.brand-text {
+  color: var(--hdr-text);
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* logo wrap keeps high-contrast small rounded tile */
+.logo-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  padding: 6px;
+  background: rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ===== Nav items (pill-like) ===== */
+.nav-item {
+  color: rgba(255,255,255,0.9);
+  transition: background-color 180ms ease, color 180ms ease, transform 160ms ease, box-shadow 160ms ease;
+  background: transparent;
+  border: 1px solid transparent;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* hover: lighter blue tint and slight raise */
+.nav-item:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(17,114,175,0.12);
+}
+
+/* active style example: bright pill */
+.nav-item.active {
+  background: linear-gradient(90deg, var(--halvestor-main), var(--halvestor-dark));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(59,132,246,0.16);
+}
+
+/* CTA button in header */
+.cta-button {
+  background: linear-gradient(90deg, var(--halvestor-main), var(--halvestor-dark));
+  color: white;
+  box-shadow: 0 10px 26px rgba(17,114,175,0.18);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 46px rgba(17,114,175,0.22);
+}
+
+/* ===== Surface card (curved rounded square used in main screenshot) ===== */
+.surface-card {
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  padding: 1px; /* keep accent flush */
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* accent bar at top of surface card (thin highlight) */
+.surface-accent {
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--halvestor-main), var(--halvestor-dark));
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+/* inner content area - keeps inner padding and sets dark warm background */
+.surface-inner {
+  padding: 3rem;
+  background: linear-gradient(180deg, rgba(17,8,6,0.86), rgba(17,8,6,0.9));
+  color: #fff;
+  border-radius: 0 0 24px 24px;
+  min-height: 220px;
+}
+
+/* an extra subtle rounded-outer shadow to emulate the "matte" room */
+.surface-card::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  border-radius: 30px;
+  box-shadow: 0 40px 120px rgba(17,8,6,0.42);
+  z-index: -1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .matt-header { padding: 10px; border-radius: 12px; }
+  .logo-wrap { width: 40px; height: 40px; padding: 5px; }
+  .nav-item { display: none; } /* hide desktop nav on mobile */
+  .surface-inner { padding: 2rem; }
+}
+
