@@ -17,9 +17,7 @@ export default function Navigation() {
           {/* Left: logo */}
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-3 no-underline">
-              <div className="logo-wrap">
-                <img src="/images/logo.svg" alt="Brand" className="h-10 w-auto" />
-              </div>
+              <img src="/logo.png" alt="Halvestor" className="h-12 w-auto" />
               <span className="brand-text">Halvestor</span>
             </Link>
           </div>
