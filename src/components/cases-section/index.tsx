@@ -1,109 +1,57 @@
-// src/components/cases-section/index.tsx
-import React from 'react';
-
-const ArrowIcon = () => (
-  <svg className="h-6 w-6 fill-current ml-2" viewBox="0 0 24 24">
-    <path
-      d="M5 12h14M12 5l7 7-7 7"
-      stroke="currentColor"
-      strokeWidth="2"
-      fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const articles = [
-  {
-    title: `Velit reprehenderit culpa Lorem reprehenderit excepteur ipsum esse.`,
-    image: `/images/case-1.webp`,
-    alt: `Proident pariatur est.`,
-  },
-  {
-    title: `Velit reprehenderit culpa Lorem reprehenderit ipsum esse.`,
-    image: `/images/case-2.webp`,
-    alt: `Proident pariatur est.`,
-  },
-  {
-    title: `Velit reprehenderit culpa Lorem reprehenderit excepteur esse.`,
-    image: `/images/case-3.webp`,
-    alt: `Proident pariatur est.`,
-  },
-];
-
 export default function CasesSection() {
-  // SAME TOKENS AS FEATURE-SECTION
-  const textBody = '#E1DFDB';
-  const headingColor = '#FFFFFF';
-  const topBlue = '#3B84F6';
-  const secBlue = '#1172AF';
-  const deepNavy = '#0A2A3D';
-
-  const surfaceStyle: React.CSSProperties = {
-    background: `linear-gradient(180deg, rgba(59,132,246,0.12), rgba(17,114,175,0.06)),
-                 linear-gradient(180deg, ${secBlue}, ${deepNavy})`,
-    borderRadius: '0 0 24px 24px',
-    paddingTop: '4rem',
-    paddingBottom: '6rem',
-  };
-
-  const cardStyle: React.CSSProperties = {
-    background: 'rgba(255,255,255,0.02)',
-    border: '1px solid rgba(255,255,255,0.06)',
-    borderRadius: 12,
-  };
-
   return (
-    <section className="py-20 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Entire matte surface wrapper */}
-        <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ boxShadow: '0 24px 80px rgba(4,12,20,0.6)' }}>
-          {/* Accent bar identical to Feature Section */}
-          <div
-            aria-hidden
-            style={{
-              height: 8,
-              background: `linear-gradient(90deg, ${topBlue}, ${secBlue})`,
-            }}
-          />
+    <section className="py-28 bg-gradient-to-b from-[#0b4f78] to-[#083a5c]">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* SECTION HEADER */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">How Investors Use Halvestor</h2>
+          <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+            Practical ways Muslim investors use Halvestor to invest with clarity, confidence, and full Sharia
+            compliance.
+          </p>
+        </div>
 
-          {/* Surface */}
-          <div style={surfaceStyle}>
-            <h1 className="text-center text-4xl lg:text-6xl font-bold" style={{ color: headingColor }}>
-              What Will You Build?
-            </h1>
-
-            <p className="text-center text-lg max-w-2xl mx-auto mt-6" style={{ color: textBody }}>
-              Don’t just take our word for it — see what leaders in digital are saying.
+        {/* CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* CARD 1 */}
+          <div className="rounded-3xl bg-white/10 border border-white/15 p-10 text-center">
+            <h3 className="text-2xl font-semibold text-white mb-4">Halal investing portfolio</h3>
+            <p className="text-blue-100 leading-relaxed mb-10">
+              Build and manage long-term investment portfolios with confidence, knowing every stock is screened and
+              maintained according to strict Sharia principles.
             </p>
 
-            {/* Cards grid */}
-            <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {articles.map((article) => (
-                <div key={article.title} className="mx-auto w-full max-w-sm">
-                  <div className="h-64 w-full rounded-lg overflow-hidden">
-                    <img src={article.image} alt={article.alt} className="w-full h-full object-cover" />
-                  </div>
-
-                  <div className="p-5 mt-4" style={cardStyle}>
-                    <p className="uppercase text-sm text-center mb-1" style={{ color: headingColor }}>
-                      Case Study
-                    </p>
-                    <p className="text-sm text-center" style={{ color: textBody }}>
-                      {article.title}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="pt-6 border-t border-white/20">
+              <p className="text-sm uppercase tracking-wide text-blue-300 mb-2">Use Case</p>
+              <p className="text-white font-medium">Halal long-term investing portfolios</p>
             </div>
+          </div>
 
-            {/* CTA */}
-            <div className="flex justify-center mt-10">
-              <span className="flex items-center text-lg cursor-pointer font-medium" style={{ color: topBlue }}>
-                See all case studies
-                <ArrowIcon />
-              </span>
+          {/* CARD 2 */}
+          <div className="rounded-3xl bg-white/10 border border-white/15 p-10 text-center">
+            <h3 className="text-2xl font-semibold text-white mb-4">Sharia screening process</h3>
+            <p className="text-blue-100 leading-relaxed mb-10">
+              Understand exactly how each investment is evaluated. Halvestor applies certified Sharia screening
+              methodologies so you always know what is halal and why.
+            </p>
+
+            <div className="pt-6 border-t border-white/20">
+              <p className="text-sm uppercase tracking-wide text-blue-300 mb-2">Use Case</p>
+              <p className="text-white font-medium">Transparent Sharia screening process</p>
+            </div>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="rounded-3xl bg-white/10 border border-white/15 p-10 text-center">
+            <h3 className="text-2xl font-semibold text-white mb-4">Faith aligned investing</h3>
+            <p className="text-blue-100 leading-relaxed mb-10">
+              Grow your wealth without compromising your values. Invest with full visibility into company activities,
+              compliance status, and ethical alignment.
+            </p>
+
+            <div className="pt-6 border-t border-white/20">
+              <p className="text-sm uppercase tracking-wide text-blue-300 mb-2">Use Case</p>
+              <p className="text-white font-medium">Faith-aligned wealth growth</p>
             </div>
           </div>
         </div>
