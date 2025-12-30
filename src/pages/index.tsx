@@ -4,6 +4,7 @@ import Hero from '@/components/hero';
 import VideoSection from '@/components/video-section';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
+import WhyDifferent from '@/components/why-different';
 import HowItWorks from '@/components/how-it-works';
 import CasesSection from '@/components/cases-section';
 import SocialProof from '@/components/social-proof';
@@ -18,17 +19,21 @@ export default function Home() {
         title="Halvestor - Sharia-Compliant Investing Made Simple"
         description="The first platform designed specifically for Muslim investors. Discover halal investment opportunities with complete transparency and religious compliance."
       />
+
       <Hero />
+
       <main>
         <VideoSection />
         <ListSection />
         <FeatureSection />
+        <WhyDifferent />
         <HowItWorks />
         <CasesSection />
         <SocialProof />
         <PricingTable />
         <FAQ />
       </main>
+
       <Footer />
     </Page>
   );
