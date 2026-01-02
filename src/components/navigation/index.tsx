@@ -1,62 +1,83 @@
-// src/components/navigation/index.tsx
-import Link from 'next/link';
-import React from 'react';
+import { NextSeo } from 'next-seo';
+import Page from '@/components/page';
 
-const links = [
-  { label: 'Services', href: '/#services' },
-  { label: 'Benefits', href: '/#benefits' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'About', href: '/about' },
-];
-
-export default function Navigation() {
+export default function PrivacyPolicy() {
   return (
-    <header className="w-full py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="matt-header matt-header--blue flex items-center justify-between">
-          {/* Left: logo */}
-          <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-3 no-underline">
-              <img src="/logo.png" alt="Halvestor" className="h-12 w-auto" />
-              <span className="brand-text">Halvestor</span>
-            </Link>
-          </div>
+    <Page>
+      <NextSeo
+        title="Privacy Policy & GDPR Notice · Halvestor"
+        description="Halvestor Privacy Policy and GDPR Fair-Processing Notice."
+      />
 
-          {/* Middle: nav links */}
-          <nav className="hidden md:flex items-center gap-4">
-            {links.map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                className="nav-item px-4 py-2 rounded-full text-sm font-medium no-underline"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+      <main className="max-w-5xl mx-auto px-6 py-20 text-secondary-700">
+        <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+          Privacy Policy & GDPR Notice
+        </h1>
 
-          {/* Right: actions */}
-          <div className="flex items-center gap-3">
-            <Link href="/signin" className="text-sm text-white/90 hover:text-white no-underline">
-              Sign In
-            </Link>
+        <p className="mb-6 text-sm text-secondary-500">
+          Effective date: 27 April 2025 · Last updated: 27 April 2025
+        </p>
 
-            <Link
-              href="/signup"
-              className="cta-button inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold no-underline"
-            >
-              Get Started
-            </Link>
-          </div>
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            1. Introduction
+          </h2>
+          <p>
+            Halvestor Limited (“Halvestor”, “we”, “our”, “us”) operates the Halvestor
+            paper-trading application and website. This policy explains how we
+            collect, use, and protect personal data.
+          </p>
 
-          {/* Mobile menu icon */}
-          <button aria-label="Open menu" className="md:hidden ml-3 p-2 rounded-md focus:outline-none" type="button">
-            <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            2. Organisation Details
+          </h2>
+          <ul className="list-disc pl-6">
+            <li>Controller: Halvestor Limited (Company No. 15381418)</li>
+            <li>Address: Flat 36, Clay Alto, Exhibition Way, Wembley, London HA9 0GS</li>
+            <li>Contact: prosper@halvestor.com</li>
+          </ul>
+
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            3. What Data We Collect
+          </h2>
+          <p>
+            Name, e-mail address, encrypted password, device and usage data. We do
+            not collect payment data, identity documents, or real-time geolocation.
+          </p>
+
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            4. How We Use Your Data
+          </h2>
+          <p>
+            To operate and secure the service, improve performance, send optional
+            updates, and report anonymised usage statistics.
+          </p>
+
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            5. Storage & Security
+          </h2>
+          <p>
+            Data is stored on secure UK/EEA servers, encrypted in transit, with
+            role-based access controls.
+          </p>
+
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            6. Your Rights
+          </h2>
+          <p>
+            You have the right to access, correct, delete, restrict, or object to
+            processing of your data. Requests can be sent to prosper@halvestor.com.
+          </p>
+
+          <h2 className="text-2xl font-semibold text-secondary-900">
+            7. Contact & Complaints
+          </h2>
+          <p>
+            Supervisory authority: Information Commissioner’s Office (ICO),
+            Wilmslow, Cheshire, UK.
+          </p>
+        </section>
+      </main>
+    </Page>
   );
 }
