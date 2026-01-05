@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
+import React from 'react';
 
 export default function PrivacyPolicy() {
   return (
@@ -11,72 +12,22 @@ export default function PrivacyPolicy() {
 
       <main className="bg-secondary-50 py-20">
         <div className="max-w-5xl mx-auto px-6">
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">Privacy Policy & GDPR Notice</h1>
-            <p className="text-sm text-secondary-600">Effective date: 27 April 2025 · Last updated: 27 April 2025</p>
-          </div>
+          <h1 className="text-4xl font-bold mb-4">Privacy Policy & GDPR Notice</h1>
+          <p className="text-sm mb-10">Effective date: 27 April 2025 · Last updated: 27 April 2025</p>
 
-          {/* Card Wrapper */}
-          <div className="space-y-10 bg-white rounded-2xl shadow-sm border border-secondary-200 p-8">
-            <Section title="1. Introduction">
-              Halvestor Limited (“Halvestor”, “we”, “our”, “us”) operates the Halvestor paper-trading mobile application
-              and website. This policy explains what personal data we collect, how we use it, and your rights under UK
-              GDPR.
-            </Section>
+          <Section title="1. Introduction">Halvestor Limited (“Halvestor”) operates a paper-trading platform.</Section>
 
-            <Section title="2. Organisation Details">
-              <ul className="list-disc pl-6 space-y-1">
-                <li>Controller: Halvestor Limited (Company No. 15381418)</li>
-                <li>Address: Flat 36, Clay Alto, Exhibition Way, Wembley, London HA9 0GS</li>
-                <li>Contact: prosper@halvestor.com</li>
-              </ul>
-            </Section>
+          <Section title="2. Organisation Details">
+            <ul className="list-disc pl-6">
+              <li>Controller: Halvestor Limited</li>
+              <li>Address: Wembley, London, UK</li>
+              <li>Contact: prosper@halvestor.com</li>
+            </ul>
+          </Section>
 
-            <Section title="3. What Data We Collect">
-              <ul className="list-disc pl-6 space-y-1">
-                <li>Name, e-mail address, encrypted password</li>
-                <li>Device and usage data (IP, OS, app actions, crash logs)</li>
-                <li>Marketing consent preferences</li>
-              </ul>
-              <p className="mt-3 text-sm text-secondary-600">
-                We do not collect payment data, identity documents, phone numbers, or real-time location.
-              </p>
-            </Section>
+          <Section title="3. Data We Collect">Name, email, password hash, and usage data.</Section>
 
-            <Section title="4. How We Use Your Data">
-              To operate and secure the service, improve performance, send optional updates (if opted in), and report
-              anonymised usage statistics. We never sell personal data.
-            </Section>
-
-            <Section title="5. Storage & Security">
-              Data is stored on secure UK/EEA servers, encrypted in transit, with role-based access controls. Data is
-              retained while your account is active and up to 24 months after last activity.
-            </Section>
-
-            <Section title="6. Your Rights">
-              You may request access, correction, deletion, restriction, portability, or object to processing. Requests
-              are handled within 30 days.
-            </Section>
-
-            <Section title="7. Cookies">
-              We use essential and basic analytics cookies only. You can manage consent via the website banner.
-            </Section>
-
-            <Section title="8. Complaints">
-              Supervisory authority: Information Commissioner’s Office (ICO), Wilmslow, UK.
-            </Section>
-
-            {/* GDPR Short Form */}
-            <div className="mt-12 rounded-xl bg-primary-50 border border-primary-200 p-6">
-              <h3 className="text-lg font-semibold text-primary-700 mb-2">GDPR Fair-Processing Notice (Short Form)</h3>
-              <p className="text-sm text-secondary-700 leading-relaxed">
-                Controller: Halvestor Limited · Purpose: Operate a free stock-market simulation app · Data: Name,
-                e-mail, password hash, device logs · Lawful basis: Consent & legitimate interest · Retention: 24 months
-                after last activity · Contact: privacy@halvestor.com
-              </p>
-            </div>
-          </div>
+          <Section title="4. Your Rights">You may request access, correction, or deletion of your data.</Section>
         </div>
       </main>
     </Page>
@@ -85,9 +36,9 @@ export default function PrivacyPolicy() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold text-secondary-900 mb-3">{title}</h2>
-      <div className="text-secondary-700 leading-relaxed">{children}</div>
+    <section className="mb-8">
+      <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+      <div>{children}</div>
     </section>
   );
 }
