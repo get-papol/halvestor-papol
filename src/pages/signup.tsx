@@ -22,31 +22,37 @@ export default function Signup() {
     <Page>
       <NextSeo title="Get Started · Halvestor" />
 
-      <main className="max-w-4xl mx-auto px-6 py-24">
-        <section className="rounded-[32px] bg-gradient-to-b from-[#0b4f78] to-[#083a5c] px-10 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Get Started with Halvestor</h1>
+      {/* Page background — SAME as Sign In */}
+      <main className="min-h-screen flex items-center justify-center bg-[#eaf4fb] px-6">
+        {/* White card — SAME width & shorter height */}
+        <section className="w-full max-w-md bg-white rounded-2xl shadow-lg px-8 py-10 text-center">
+          <h1 className="text-3xl font-bold text-secondary-900 mb-4">Get Started with Halvestor</h1>
 
           {!submitted ? (
             <>
-              <p className="text-lg text-gray-400 mb-10">Join early access to be notified when Halvestor launches.</p>
+              <p className="text-secondary-600 mb-8">Join early access to be notified when Halvestor launches.</p>
 
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full px-5 py-4 rounded-xl text-gray-900 mb-4"
+                  className="w-full px-4 py-3 rounded-lg border border-secondary-200 text-secondary-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
 
-                <button type="submit" className="w-full py-4 rounded-xl bg-[#1172AF] text-white font-semibold">
+                {/* Button — EXACT Sign In color + text color */}
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded-lg bg-[#9ac9e6] text-[#0b5f91] font-semibold hover:bg-[#86bddf] transition-colors"
+                >
                   Join Early Access
                 </button>
               </form>
             </>
           ) : (
-            <p className="text-gray-300 text-lg">
+            <p className="text-secondary-700">
               Confirmation email sent to <strong>{email}</strong>
             </p>
           )}
