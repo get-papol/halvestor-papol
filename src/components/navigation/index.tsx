@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const links = [
   { label: 'Services', href: '/#services' },
@@ -16,7 +17,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-3 no-underline">
-              <img src="/logo.png" alt="Halvestor" className="h-12 w-auto" />
+              <Image src="/logo.png" alt="Halvestor" width={48} height={48} className="h-12 w-auto" priority />
               <span className="brand-text">Halvestor</span>
             </Link>
           </div>

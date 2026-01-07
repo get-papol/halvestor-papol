@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
+import Link from 'next/link';
 
 export default function Pricing() {
   const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly');
@@ -72,12 +73,12 @@ export default function Pricing() {
             </ul>
 
             <div>
-              <a
+              <Link
                 href="/signup?plan=basic"
                 className="inline-block w-full text-center py-3 rounded-lg border border-[#0E7ACB] text-[#0E7ACB] font-semibold hover:bg-[#0E7ACB] hover:text-white transition"
               >
                 Get Basic
-              </a>
+              </Link>
             </div>
           </article>
 
@@ -113,12 +114,12 @@ export default function Pricing() {
             </ul>
 
             <div className="mt-4">
-              <a
+              <Link
                 href="/signup?plan=pro"
                 className="inline-block w-full text-center py-3 rounded-lg bg-[#0E7ACB] text-white font-semibold shadow hover:opacity-95 transition"
               >
                 Start Pro
-              </a>
+              </Link>
             </div>
           </article>
 
@@ -147,12 +148,12 @@ export default function Pricing() {
             </ul>
 
             <div>
-              <a
+              <Link
                 href="/contact"
                 className="inline-block w-full text-center py-3 rounded-lg border border-[#0E7ACB] text-[#0E7ACB] font-semibold hover:bg-[#0E7ACB] hover:text-white transition"
               >
                 Contact Sales
-              </a>
+              </Link>
             </div>
           </article>
         </section>
@@ -178,12 +179,12 @@ export default function Pricing() {
 
         {/* CTA */}
         <section className="mt-10 text-center">
-          <a
+          <Link
             href="/get-started"
             className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-[#4A8CFF] to-[#5CA4FF] text-white font-semibold shadow-lg hover:opacity-95 transition"
           >
             Start your halal investing journey
-          </a>
+          </Link>
         </section>
       </main>
     </Page>
