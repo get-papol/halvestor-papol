@@ -21,16 +21,24 @@ const cases = [
 
 export default function CasesSection() {
   return (
-    <section className="py-24">
+    <section
+      className="py-24"
+      style={{
+        backgroundImage: "url('/about-bg.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6">
-        {/* BLUE CONTAINER BOX */}
+        {/* BLUE TEXT BOX */}
         <div className="rounded-[32px] bg-gradient-to-b from-[#0b4f78] to-[#083a5c] px-10 py-16">
           {/* HEADER */}
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How Investors Use Halvestor</h2>
+
+            {/* 🔴 THIS TEXT MUST NEVER CHANGE */}
             <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-              Practical ways Muslim investors use Halvestor to invest with clarity, confidence, and full Sharia
-              compliance.
+              Practical ways investors use Halvestor to invest with clarity, confidence, and full Sharia compliance.
             </p>
           </div>
 
@@ -50,7 +58,7 @@ export default function CasesSection() {
             ))}
           </div>
         </div>
-        {/* END BLUE CONTAINER */}
+        {/* END BLUE TEXT BOX */}
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+// src/pages/signin.tsx
 import { useState } from 'react';
 import Link from 'next/link';
 import Page from '@/components/page';
@@ -7,8 +8,13 @@ export default function SignIn() {
 
   return (
     <Page>
-      <main className="min-h-screen flex items-center justify-center bg-secondary-50 px-6">
-        <div className="w-full max-w-md bg-white rounded-xl shadow-lg border border-secondary-200 p-8">
+      <main
+        className="min-h-screen flex items-center justify-center px-6 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/images/about-bg.jpg')",
+        }}
+      >
+        <div className="w-full max-w-md rounded-2xl bg-white/90 backdrop-blur-md shadow-xl border border-secondary-200 p-8">
           {/* Header */}
           <h1 className="text-3xl font-bold text-secondary-900 text-center mb-2">Sign In</h1>
           <p className="text-secondary-600 text-center mb-8">Welcome back to Halvestor</p>

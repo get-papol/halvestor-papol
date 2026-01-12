@@ -4,7 +4,6 @@ import Hero from '@/components/hero';
 import VideoSection from '@/components/video-section';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
-import WhyDifferent from '@/components/why-different';
 import HowItWorks from '@/components/how-it-works';
 import CasesSection from '@/components/cases-section';
 import SocialProof from '@/components/social-proof';
@@ -26,7 +25,6 @@ export default function Home() {
         <VideoSection />
         <ListSection />
         <FeatureSection />
-        <WhyDifferent />
         <HowItWorks />
         <CasesSection />
         <SocialProof />

@@ -6,41 +6,61 @@ export default function About() {
     <Page>
       <NextSeo
         title="About Halvestor"
-        description="Learn more about Halvestor and our mission to make Sharia-compliant investing accessible."
+        description="Learn more about Halvestor and our approach to ethical, Sharia-compliant investing."
       />
 
-      <main className="max-w-6xl mx-auto px-6 py-20">
-        {/* Heading */}
-        <section className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">About Halvestor</h1>
+      <main
+        className="min-h-screen py-24"
+        style={{
+          backgroundImage: "url('/images/about-bg.jpg')",
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          {/* MAIN CONTENT BOX */}
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl px-10 py-14 shadow-xl">
+            <h1 className="text-5xl font-semibold text-secondary-900 mb-6">About Halvestor</h1>
 
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Halvestor is a purpose-built investment platform created to help Muslim investors grow wealth confidently
-            while remaining fully aligned with Islamic financial principles.
-          </p>
-        </section>
-
-        {/* Blue info box */}
-        <section className="bg-[#0b4f78] rounded-3xl px-8 py-10 md:px-14 md:py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-base md:text-lg text-blue-100 leading-relaxed mb-6">
-              Investing as a Muslim often means navigating uncertainty, fragmented information, and constant doubt about
-              whether investments truly align with Sharia principles. Halvestor was created to remove this complexity
-              and replace it with clarity and trust.
+            <p className="text-lg text-secondary-700 leading-relaxed mb-8">
+              Halvestor is a modern investment platform built to make Sharia-compliant and ethical investing accessible,
+              transparent, and practical in today’s global markets. We are focused on empowering individuals who want
+              their investments to align with their values—without sacrificing clarity, control, or confidence.
             </p>
 
-            <p className="text-base md:text-lg text-blue-100 leading-relaxed mb-6">
-              Every investment available on Halvestor is carefully screened using established Islamic finance standards.
-              We focus on transparency, ethical practices, and long-term value creation so investors can make decisions
-              with confidence and peace of mind.
+            <p className="text-lg text-secondary-700 leading-relaxed mb-10">
+              Our platform is designed around rigorous Sharia screening, clear reporting, and responsible wealth growth.
+              Every investment opportunity is evaluated against established compliance criteria, supported by detailed
+              insights into company activities, financial ratios, and purification considerations—so users can invest
+              with peace of mind.
             </p>
 
-            <p className="text-base md:text-lg text-blue-100 leading-relaxed">
-              Our mission is simple. Empower Muslim investors worldwide with tools, knowledge, and opportunities that
-              respect faith while supporting sustainable financial growth.
-            </p>
+            {/* INFO BOXES */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="rounded-2xl bg-secondary-50 p-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">Ethical by Design</h3>
+                <p className="text-secondary-600 text-sm leading-relaxed">
+                  Investments screened to align with ethical and Sharia-based financial principles.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-secondary-50 p-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">Transparent Process</h3>
+                <p className="text-secondary-600 text-sm leading-relaxed">
+                  Clear insights into compliance checks, financial ratios, and investment decisions.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-secondary-50 p-6">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">Built for the Future</h3>
+                <p className="text-secondary-600 text-sm leading-relaxed">
+                  A scalable platform designed to support responsible investing globally.
+                </p>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
       </main>
     </Page>
   );

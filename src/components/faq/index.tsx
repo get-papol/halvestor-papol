@@ -1,3 +1,5 @@
+// src/components/faq/index.tsx
+
 import { useState } from 'react';
 
 const faqs = [
@@ -47,21 +49,29 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-secondary-50">
+    <section
+      id="faq"
+      className="py-24"
+      style={{
+        backgroundImage: "url('/about-bg.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-secondary-900 mb-4">Got Questions? We’ve Got Answers</h2>
-          <p className="text-lg text-secondary-600">
+          <p className="text-lg text-secondary-700">
             Everything you need to know about halal investing with Halvestor.
           </p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-xl border border-secondary-200 overflow-hidden">
+            <div key={index} className="rounded-xl border border-secondary-200 bg-white/80 backdrop-blur">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-secondary-50 transition"
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-secondary-50"
               >
                 <span className="text-lg font-semibold text-secondary-900">{faq.question}</span>
                 <span className={`transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>▼</span>
@@ -69,21 +79,11 @@ export default function FAQ() {
 
               {openIndex === index && (
                 <div className="px-6 pb-6">
-                  <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                  <p className="text-secondary-700 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <p className="text-secondary-600 mb-6">Still have questions? We’re here to help.</p>
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition"
-          >
-            Contact Support
-          </a>
         </div>
       </div>
     </section>

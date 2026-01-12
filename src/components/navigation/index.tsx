@@ -1,11 +1,12 @@
+// src/components/navigation/index.tsx
 import Link from 'next/link';
-import Image from 'next/image';
+import React from 'react';
 
 const links = [
   { label: 'Services', href: '/#services' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
-  { label: 'Privacy Policy & GDPR', href: '/privacy-policy' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms of Service', href: '/terms-of-service' },
 ];
 
@@ -13,38 +14,71 @@ export default function Navigation() {
   return (
     <header className="w-full py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="matt-header matt-header--blue flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-3 no-underline">
-              <Image src="/logo.png" alt="Halvestor" width={48} height={48} className="h-12 w-auto" priority />
-              <span className="brand-text">Halvestor</span>
-            </Link>
-          </div>
+        {/* HEADER CONTAINER */}
+        <div
+          className="
+            flex items-center justify-between
+            rounded-2xl
+            px-2 py-1
+            bg-[#1172af]
+            shadow-lg
+          "
+        >
+          {/* LOGO ONLY */}
+          <Link href="/" className="flex items-center">
+            <img src="/logo.png.svg" alt="Halvestor" className="h-24 md:h-26 w-auto" />
+          </Link>
 
-          {/* Nav */}
+          {/* NAV LINKS */}
           <nav className="hidden md:flex items-center gap-4">
             {links.map((l) => (
               <Link
                 key={l.label}
                 href={l.href}
-                className="nav-item px-4 py-2 rounded-full text-sm font-medium no-underline"
+                className="
+                  px-2 py-2 rounded-full
+                  text-sm font-medium
+                  text-white/90
+                  hover:text-white
+                  hover:bg-white/10
+                  transition
+                "
               >
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          {/* Actions */}
+          {/* ACTIONS */}
           <div className="flex items-center gap-4">
-            <Link href="/signin" className="text-sm text-white/90 hover:text-white no-underline">
+            <Link
+              href="/signin"
+              className="text-sm font-medium text-white/90 hover:text-white transition
+              rounded-lg
+              inline-flex items-center justify-center
+                rounded-lg
+                bg-[#1172af]
+                px-5 py-2.5
+                text-sm font-semibold
+                text-white
+                hover:bg-[#0e5f96]
+                transition"
+            >
               Sign In
             </Link>
 
-            {/* GET STARTED BUTTON (RESTORED) */}
             <Link
               href="/signup"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-full text-sm font-semibold no-underline"
+              className="
+                inline-flex items-center justify-center
+                rounded-lg
+                bg-[#1172af]
+                px-5 py-2.5
+                text-sm font-semibold
+                text-white
+                hover:bg-[#0e5f96]
+                transition
+              "
             >
               Get Started
             </Link>

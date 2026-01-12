@@ -5,14 +5,16 @@ export default function Hero() {
   return (
     <section
       aria-label="Hero"
-      className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50 py-24 md:py-32"
+      className="relative overflow-hidden py-24 md:py-32 bg-[url('/about-bg.jpg')] bg-cover bg-center bg-no-repeat"
     >
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="absolute inset-0 bg-white/70" />
+
+      <div className="relative max-w-7xl mx-auto px-6 text-center">
         <h1 className="text-secondary-900 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
           Invest According to Your Faith
         </h1>
 
-        <p className="mt-6 text-secondary-600 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
+        <p className="mt-6 text-secondary-700 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
           The first platform designed specifically for Muslim investors. Discover halal investment opportunities with
           complete transparency and religious compliance.
         </p>
@@ -33,7 +35,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="mt-12 text-sm text-secondary-500">Trusted by Muslim investors worldwide</div>
+        <div className="mt-12 text-sm text-secondary-600">Trusted by Muslim investors worldwide</div>
       </div>
     </section>
   );

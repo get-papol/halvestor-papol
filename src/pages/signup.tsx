@@ -22,10 +22,15 @@ export default function Signup() {
     <Page>
       <NextSeo title="Get Started · Halvestor" />
 
-      {/* Page background — SAME as Sign In */}
-      <main className="min-h-screen flex items-center justify-center bg-[#eaf4fb] px-6">
-        {/* White card — SAME width & shorter height */}
-        <section className="w-full max-w-md bg-white rounded-2xl shadow-lg px-8 py-10 text-center">
+      {/* BACKGROUND IMAGE — SAME AS ABOUT PAGE */}
+      <main
+        className="min-h-screen flex items-center justify-center px-6 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/about-bg.jpg')",
+        }}
+      >
+        {/* CONTENT CARD — UNCHANGED */}
+        <section className="w-full max-w-md bg-white/95 backdrop-blur rounded-2xl shadow-lg px-8 py-10 text-center">
           <h1 className="text-3xl font-bold text-secondary-900 mb-4">Get Started with Halvestor</h1>
 
           {!submitted ? (
@@ -42,7 +47,6 @@ export default function Signup() {
                   className="w-full px-4 py-3 rounded-lg border border-secondary-200 text-secondary-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
 
-                {/* Button — EXACT Sign In color + text color */}
                 <button
                   type="submit"
                   className="w-full py-3 rounded-lg bg-[#9ac9e6] text-[#0b5f91] font-semibold hover:bg-[#86bddf] transition-colors"
