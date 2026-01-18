@@ -1,4 +1,3 @@
-// src/pages/signin.tsx
 import { useState } from 'react';
 import Link from 'next/link';
 import Page from '@/components/page';
@@ -8,18 +7,11 @@ export default function SignIn() {
 
   return (
     <Page>
-      <main
-        className="min-h-screen flex items-center justify-center px-6 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/about-bg.jpg')",
-        }}
-      >
-        <div className="w-full max-w-md rounded-2xl bg-white/90 backdrop-blur-md shadow-xl border border-secondary-200 p-8">
-          {/* Header */}
+      <main className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#eaf4fb' }}>
+        <div className="w-full max-w-md rounded-2xl bg-white/95 backdrop-blur shadow-xl border border-secondary-200 p-8">
           <h1 className="text-3xl font-bold text-secondary-900 text-center mb-2">Sign In</h1>
           <p className="text-secondary-600 text-center mb-8">Welcome back to Halvestor</p>
 
-          {/* Form */}
           <form className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-secondary-700 mb-1">Email</label>
@@ -39,7 +31,6 @@ export default function SignIn() {
               />
             </div>
 
-            {/* TERMS CHECKBOX */}
             <div className="flex items-start gap-3">
               <input
                 id="terms"
@@ -56,7 +47,6 @@ export default function SignIn() {
               </label>
             </div>
 
-            {/* SIGN IN BUTTON */}
             <button
               type="submit"
               disabled={!agreed}
@@ -70,7 +60,6 @@ export default function SignIn() {
             </button>
           </form>
 
-          {/* LEGAL NOTE */}
           <p className="mt-6 text-xs text-secondary-500 text-center">
             By continuing, you also acknowledge our{' '}
             <Link href="/privacy-policy" className="text-primary-600 hover:underline">

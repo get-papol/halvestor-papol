@@ -11,11 +11,8 @@ export default function Pricing() {
     <Page>
       <NextSeo title="Pricing · Halvestor" description="Simple, transparent pricing for halal investing services." />
 
-      {/* BACKGROUND IMAGE WRAPPER */}
-      <main
-        className="min-h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/about-bg.jpg')" }}
-      >
+      {/* LIGHT BLUE BACKGROUND — SAME AS OTHER PAGES */}
+      <main className="min-h-screen" style={{ backgroundColor: '#eaf4fb' }}>
         <div className="max-w-6xl mx-auto px-6 py-16">
           {/* Header intro */}
           <section className="text-center mb-12">
@@ -27,7 +24,7 @@ export default function Pricing() {
 
             <div className="mt-8 inline-flex items-center gap-4 bg-white rounded-full p-1 shadow-sm">
               <span
-                className={`px-4 py-2 rounded-full font-medium ${
+                className={`px-4 py-2 rounded-full font-medium cursor-pointer ${
                   billing === 'monthly' ? 'bg-[#0E7ACB] text-white' : 'text-gray-600'
                 }`}
                 onClick={() => setBilling('monthly')}
@@ -35,7 +32,7 @@ export default function Pricing() {
                 Monthly
               </span>
               <span
-                className={`px-4 py-2 rounded-full font-medium ${
+                className={`px-4 py-2 rounded-full font-medium cursor-pointer ${
                   billing === 'annual' ? 'bg-[#0E7ACB] text-white' : 'text-gray-600'
                 }`}
                 onClick={() => setBilling('annual')}
@@ -48,15 +45,14 @@ export default function Pricing() {
 
           {/* Pricing grid */}
           <section className="grid gap-8 grid-cols-1 md:grid-cols-3 mb-12">
+            {/* Basic */}
             <article className="rounded-2xl border bg-white p-6 flex flex-col shadow-sm">
               <header className="flex justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-semibold">Basic</h3>
                   <p className="text-sm text-gray-500">Starter plan</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold text-[#0E7ACB]">{price(0, 0)}</div>
-                </div>
+                <div className="text-2xl font-bold text-[#0E7ACB]">{price(0, 0)}</div>
               </header>
 
               <ul className="mb-6 space-y-3 text-sm text-gray-600 flex-1">
@@ -73,6 +69,7 @@ export default function Pricing() {
               </Link>
             </article>
 
+            {/* Pro */}
             <article className="relative rounded-3xl p-8 flex flex-col bg-white shadow-2xl">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <span className="bg-[#0E7ACB] text-white px-3 py-1 rounded-full text-sm font-medium">Most popular</span>
@@ -83,9 +80,7 @@ export default function Pricing() {
                   <h3 className="text-2xl font-semibold">Pro</h3>
                   <p className="text-sm text-gray-500">For active investors</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-[#0E7ACB]">{price(1999, 14990)}</div>
-                </div>
+                <div className="text-3xl font-bold text-[#0E7ACB]">{price(1999, 14990)}</div>
               </header>
 
               <ul className="mb-6 space-y-3 text-sm text-gray-700 flex-1">
@@ -103,15 +98,14 @@ export default function Pricing() {
               </Link>
             </article>
 
+            {/* Enterprise */}
             <article className="rounded-2xl border bg-white p-6 flex flex-col shadow-sm">
               <header className="flex justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-semibold">Enterprise</h3>
                   <p className="text-sm text-gray-500">For institutions</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold text-[#0E7ACB]">Custom</div>
-                </div>
+                <div className="text-2xl font-bold text-[#0E7ACB]">Custom</div>
               </header>
 
               <ul className="mb-6 space-y-3 text-sm text-gray-600 flex-1">
@@ -129,6 +123,7 @@ export default function Pricing() {
             </article>
           </section>
 
+          {/* Why choose */}
           <section className="bg-white rounded-xl p-6 border border-[#0E7ACB]/40 shadow-sm">
             <h4 className="font-semibold text-lg mb-4">Why choose Halvestor?</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-secondary-600">

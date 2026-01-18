@@ -80,7 +80,7 @@ export default function Navigation() {
                 transition
               "
             >
-              Get Started
+              Get the App
             </Link>
           </div>
         </div>

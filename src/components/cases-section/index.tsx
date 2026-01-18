@@ -24,9 +24,7 @@ export default function CasesSection() {
     <section
       className="py-24"
       style={{
-        backgroundImage: "url('/about-bg.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundColor: '#eaf4fb',
       }}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -36,7 +34,6 @@ export default function CasesSection() {
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How Investors Use Halvestor</h2>
 
-            {/* 🔴 THIS TEXT MUST NEVER CHANGE */}
             <p className="text-lg md:text-xl text-white/70 leading-relaxed">
               Practical ways investors use Halvestor to invest with clarity, confidence, and full Sharia compliance.
             </p>

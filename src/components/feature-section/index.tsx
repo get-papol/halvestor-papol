@@ -12,7 +12,12 @@ const FeatureSection: React.FC = () => {
   const headerBlueDark = '#0e5f96';
 
   const surfaceInnerStyle: React.CSSProperties = {
-    background: `linear-gradient(180deg, rgba(17,114,175,0.08), rgba(17,114,175,0.04)), linear-gradient(180deg, ${headerBlueDark}, #0b1c28)`,
+    background: `linear-gradient(
+      180deg,
+      rgba(17,114,175,0.08),
+      rgba(17,114,175,0.04)
+    ),
+    linear-gradient(180deg, ${headerBlueDark}, #0b1c28)`,
     color: textColor,
     borderRadius: '0 0 24px 24px',
   };
@@ -24,13 +29,15 @@ const FeatureSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-cover bg-center" style={{ backgroundImage: "url('/about-bg.jpg')" }}>
+    <section className="py-20" style={{ backgroundColor: '#eaf4fb' }}>
       <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
         <div className="surface-card">
           <div
             className="surface-accent"
             aria-hidden
-            style={{ background: `linear-gradient(90deg, #3b84f6, ${headerBlue})` }}
+            style={{
+              background: `linear-gradient(90deg, #3b84f6, ${headerBlue})`,
+            }}
           />
           <div className="surface-inner" style={surfaceInnerStyle}>
             <div className="container mx-auto px-6">
@@ -39,22 +46,22 @@ const FeatureSection: React.FC = () => {
                   Our Solution
                 </h4>
                 <p className="text-4xl lg:text-5xl font-bold mt-2" style={{ color: textColor }}>
-                  How Halvestor Changes the Game
+                  How Halvestor solves this
                 </p>
                 <p className="mt-4 text-lg max-w-3xl mx-auto text-center" style={{ color: '#8493aa' }}>
-                  We&apos;ve built the first platform specifically designed for Muslim investors, addressing every
-                  challenge you face.
+                  We are building the first platform specifically designed for Sharia-compliant investing, addressing
+                  every challenge investors face with transparency and automation.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  '100% Halal Verified',
-                  'Complete Transparency',
-                  'No Hidden Fees',
-                  'Expert Guidance',
-                  'Wide Selection',
-                  'Easy to Use',
+                  'Sharia Stock Screening',
+                  'Automatic Purification',
+                  'Sharia Compliance Certification',
+                  'Charity Donation Integrations',
+                  'Zakat Calculation',
+                  'Full Transparency & No Hidden Fees',
                 ].map((title, i) => (
                   <div key={i} className="p-6 transition-shadow" style={cardStyle}>
                     <div className="flex items-center mb-4">
@@ -64,18 +71,23 @@ const FeatureSection: React.FC = () => {
                       </div>
                     </div>
                     <p className="leading-relaxed" style={{ color: textColor, opacity: 0.95 }}>
-                      {title === '100% Halal Verified' &&
-                        'Every investment option is pre-screened and certified as Sharia-compliant by Islamic finance scholars.'}
-                      {title === 'Complete Transparency' &&
-                        'See detailed information about company activities, board members, and business practices before investing.'}
-                      {title === 'No Hidden Fees' &&
-                        'Simple, transparent pricing with no subscription fees. Pay only when you invest.'}
-                      {title === 'Expert Guidance' &&
-                        'Access to Islamic finance experts who can help you make informed decisions.'}
-                      {title === 'Wide Selection' &&
-                        'Diverse portfolio of Sharia-compliant stocks, ETFs, and opportunities.'}
-                      {title === 'Easy to Use' &&
-                        'Intuitive platform designed for both beginners and experienced investors.'}
+                      {title === 'Sharia Stock Screening' &&
+                        'All stocks are screened against Sharia criteria, with detailed reports on company activities, financial ratios, and compliance status.'}
+
+                      {title === 'Automatic Purification' &&
+                        'Purification is calculated automatically, including exact percentages, reasons for purification, and links to underlying company practices.'}
+
+                      {title === 'Sharia Compliance Certification' &&
+                        'Compliance is verified and certified by recognized Sharia and Islamic finance organizations.'}
+
+                      {title === 'Charity Donation Integrations' &&
+                        'Integrated donor platforms allow purified funds to be donated directly to intended charities from within the platform.'}
+
+                      {title === 'Zakat Calculation' &&
+                        'Zakat is calculated automatically based on your stock investments and applicable purification data.'}
+
+                      {title === 'Full Transparency & No Hidden Fees' &&
+                        'No hidden fees, no assumptions — every calculation, fee, and compliance decision is fully transparent.'}
                     </p>
                   </div>
                 ))}

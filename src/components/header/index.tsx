@@ -1,34 +1,68 @@
-import Button from '@/components/button';
+import Link from 'next/link';
+import Image from 'next/image';
 
-const Header = () => (
-  <header className="bg-white min-h-[calc(100vh-6rem)]">
-    <div className="max-w-4xl mx-auto py-16 px-14 sm:px-6 lg:px-8">
-      <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-8xl text-center leading-snug text-gray-800">
-        Your website, beyond expectations
-      </h1>
-      <div className="max-w-xl mx-auto">
-        <p className="mt-10 text-gray-500 text-center text-xl lg:text-3xl">
-          Make your website wonderful and build beyond your expectations.
-        </p>
-      </div>
-      <div className="mt-10 flex justify-center items-center w-full mx-auto">
-        <Button primary>Get started</Button>
-        <span className="mx-2">or</span>
-        <Button>Contact us</Button>
-      </div>
-    </div>
-    <div className="flex justify-center w-full">
-      <div className="mt-4 w-full">
-        <p className="font-mono uppercase text-center font-medium text-sm text-gray-600">These folks get it</p>
-        <div className="flex items-center justify-center mx-auto flex-wrap gap-8">
-          <div className="text-4xl font-bold text-gray-400">AWS</div>
-          <div className="text-4xl font-bold text-gray-400">Netlify</div>
-          <div className="text-4xl font-bold text-gray-400">Nike</div>
-          <div className="text-4xl font-bold text-gray-400">Figma</div>
+export default function Header() {
+  return (
+    <header className="relative z-50">
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="bg-[#1673ac] rounded-2xl px-10 py-5 flex items-center justify-between shadow-lg">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-4">
+            <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center">
+              <Image
+                src="/logo.svg" // change to /logo.png if needed
+                alt="Halvestor"
+                width={36}
+                height={36}
+                priority
+                className="object-contain"
+              />
+            </div>
+            <span className="text-white text-xl font-semibold tracking-wide">Halvestor</span>
+          </Link>
+
+          {/* NAV */}
+          <nav className="hidden md:flex items-center gap-10 text-white/90 font-medium">
+            <Link href="/services" className="hover:text-white transition">
+              Services
+            </Link>
+            <Link href="/pricing" className="hover:text-white transition">
+              Pricing
+            </Link>
+            <Link href="/about" className="hover:text-white transition">
+              About
+            </Link>
+          </nav>
+
+          {/* ACTIONS */}
+          <div className="flex items-center gap-6">
+            <Link href="/signin" className="text-white/80 hover:text-white transition font-medium">
+              Sign In
+            </Link>
+
+            {/* PILL-STYLE PRIMARY CTA */}
+            <Link
+              href="/get-the-app"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                px-8
+                py-3.5
+                rounded-full
+                bg-white
+                text-[#1673ac]
+                font-semibold
+                text-sm
+                hover:opacity-90
+                transition
+              "
+            >
+              Get the App
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-);
-
-export default Header;
+    </header>
+  );
+}

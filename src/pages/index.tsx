@@ -7,7 +7,6 @@ import FeatureSection from '@/components/feature-section';
 import HowItWorks from '@/components/how-it-works';
 import CasesSection from '@/components/cases-section';
 import SocialProof from '@/components/social-proof';
-import PricingTable from '@/components/pricing-table';
 import FAQ from '@/components/faq';
 import Footer from '@/components/footer';
 
@@ -28,7 +27,6 @@ export default function Home() {
         <HowItWorks />
         <CasesSection />
         <SocialProof />
-        <PricingTable />
         <FAQ />
       </main>
 

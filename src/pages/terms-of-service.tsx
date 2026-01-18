@@ -1,29 +1,93 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
+import { motion, Variants } from 'framer-motion';
+
+/* ------------------ ANIMATIONS ------------------ */
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+/* ------------------ PAGE ------------------ */
 
 export default function TermsOfService() {
   return (
     <Page>
       <NextSeo title="Terms of Service · Halvestor" description="Halvestor Terms of Use – paper-trading platform" />
 
-      <section className="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary-900">Terms of Service</h1>
-          <p className="mt-4 text-secondary-600">Version 1.0 · Effective 27 April 2025</p>
-        </div>
+      {/* HERO */}
+      <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#eaf4fb' }}>
+        {/* Soft decorative shapes */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-[#9ac9e6]/40 blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#cfe6f5]/50 blur-3xl"
+        />
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.6 }}
+          className="relative max-w-5xl mx-auto px-6 text-center"
+        >
+          <span className="inline-block mb-5 rounded-full bg-[#9ac9e6]/60 px-4 py-1 text-sm font-medium text-[#0b4f78]">
+            Legal & Usage
+          </span>
+
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0b4f78]">Terms of Service</h1>
+
+          <p className="mt-4 text-[#1e6fa8]">Version 1.0 · Effective 27 April 2025</p>
+        </motion.div>
       </section>
 
-      <main className="max-w-5xl mx-auto px-6 py-20 space-y-12 text-secondary-700">
-        {sections.map((section, index) => (
-          <div key={index} className="bg-white rounded-xl border border-secondary-200 shadow-sm p-8">
-            <h3 className="text-xl font-semibold text-secondary-900 mb-4">{section.title}</h3>
-            <div className="space-y-3">{section.content}</div>
-          </div>
-        ))}
-      </main>
+      {/* CONTENT */}
+      <section className="relative pb-32" style={{ backgroundColor: '#eaf4fb' }}>
+        <motion.main
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="relative max-w-5xl mx-auto px-6 -mt-16 space-y-14"
+        >
+          {sections.map((section, index) => (
+            <motion.article
+              key={index}
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              whileHover={{ y: -4 }}
+              className="relative rounded-3xl bg-white shadow-md p-10 overflow-hidden"
+            >
+              {/* Accent strip */}
+              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#1172af] to-[#9ac9e6]" />
+
+              <h3 className="text-xl font-semibold text-secondary-900 mb-4">{section.title}</h3>
+
+              <div className="space-y-3 text-secondary-700 leading-relaxed">{section.content}</div>
+            </motion.article>
+          ))}
+        </motion.main>
+      </section>
     </Page>
   );
 }
+
+/* ------------------ CONTENT ------------------ */
 
 const sections = [
   {
