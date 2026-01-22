@@ -1,70 +1,52 @@
+import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
-export default function Home() {
+export default function Hero() {
   return (
-    <>
-      {/* HEADER */}
-      <header className="relative z-50">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="bg-[#1673ac] rounded-2xl px-10 py-5 flex items-center justify-between shadow-lg">
-            {/* LOGO */}
-            <Link href="/" className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center">
-                <Image src="/logo.svg" alt="Halvestor" width={36} height={36} priority />
-              </div>
-              <span className="text-white text-xl font-semibold">Halvestor</span>
-            </Link>
+    <section
+      aria-label="Hero"
+      className="relative overflow-hidden py-24 md:py-32"
+      style={{ backgroundColor: '#eaf4fb' }}
+    >
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        {/* HEADLINE */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0b4f78] leading-tight">
+          Invest According to Your Faith
+        </h1>
 
-            {/* NAV */}
-            <nav className="hidden md:flex items-center gap-10 text-white/90 font-medium">
-              <Link href="/services" className="hover:text-white">
-                Services
-              </Link>
-              <Link href="/pricing" className="hover:text-white">
-                Pricing
-              </Link>
-              <Link href="/about" className="hover:text-white">
-                About
-              </Link>
-            </nav>
+        {/* SUBTEXT */}
+        <p className="mt-6 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-[#1e6fa8]">
+          The first platform designed for Sharia-compliant investing. Discover ethical investment opportunities with
+          clarity, transparency, and full compliance.
+        </p>
 
-            {/* ACTIONS */}
-            <div className="flex items-center gap-6">
-              <Link href="/signin" className="text-white/80 hover:text-white font-medium">
-                Sign In
-              </Link>
+        {/* CTAs */}
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            href="/signup"
+            className="inline-flex items-center justify-center rounded-lg bg-[#1172af] px-8 py-4 text-base font-semibold text-white hover:bg-[#0e5f96] transition"
+          >
+            Join the Waitlist
+          </Link>
 
-              {/* 🔥 HIGHLIGHTED CTA — LIKE SIGN UP IN IMAGE */}
-              <Link
-                href="/get-the-app"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  px-6
-                  py-2.5
-                  rounded-full
-                  bg-[#0f4f7a]          /* deep brand blue */
-                  text-white
-                  font-semibold
-                  text-sm
-                  border
-                  border-[#7a4a2e]      /* brown accent stroke */
-                  shadow-md
-                  hover:bg-[#0d456b]
-                  transition
-                "
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
+          <a
+            href="#features"
+            className="inline-flex items-center justify-center rounded-lg border-2 border-[#1172af] px-8 py-4 text-base font-medium text-[#1172af] hover:bg-[#1172af] hover:text-white transition"
+          >
+            Learn More
+          </a>
         </div>
-      </header>
 
-      {/* PAGE BODY PLACEHOLDER */}
-      <main className="min-h-screen bg-[#f4f9fd]" />
-    </>
+        {/* TRUST LINK — NEW */}
+        <div className="mt-8">
+          <Link href="/sharia-compliance" className="text-sm font-medium text-[#1172af] hover:underline">
+            Read more about Sharia-compliant investing →
+          </Link>
+        </div>
+
+        {/* FOOTNOTE */}
+        <p className="mt-10 text-sm text-[#4a7fa6]">Built for those seeking ethical and Sharia-aligned investing</p>
+      </div>
+    </section>
   );
 }

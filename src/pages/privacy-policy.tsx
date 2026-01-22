@@ -39,13 +39,14 @@ export default function PrivacyPolicy() {
             transition={{ duration: 0.6 }}
             className="mb-14"
           >
-            <div className="inline-block mb-4 rounded-full bg-primary-100 px-4 py-1 text-sm font-medium text-primary-700">
+            <div className="inline-block mb-4 rounded-full bg-[#e6f2fb] px-4 py-1 text-sm font-medium text-[#1172af]">
               Legal & Compliance
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">Privacy Policy & GDPR Notice</h1>
+            {/* MAIN HEADING — SIZE UNCHANGED */}
+            <h1 className="text-4xl md:text-5xl font-bold text-[#0b4f78] mb-4">Privacy Policy & GDPR Notice</h1>
 
-            <p className="text-sm text-secondary-600">Effective date: 27 April 2025 · Last updated: 27 April 2025</p>
+            <p className="text-sm text-[#4a7fa6]">Effective date: 27 April 2025 · Last updated: 27 April 2025</p>
           </motion.div>
 
           {/* CONTENT CARD */}
@@ -54,10 +55,10 @@ export default function PrivacyPolicy() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="space-y-12 bg-white/90 backdrop-blur-md rounded-3xl shadow-md border border-secondary-200 p-10 relative overflow-hidden"
+            className="space-y-12 bg-white/90 backdrop-blur-md rounded-3xl shadow-md border border-[#d6e9f7] p-10 relative overflow-hidden"
           >
             {/* Decorative gradient */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-primary-300 to-primary-500" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1172af] via-[#8fc3e8] to-[#1172af]" />
 
             <AnimatedSection title="1. Introduction">
               Halvestor Limited (“Halvestor”, “we”, “our”, “us”) operates the Halvestor paper-trading mobile application
@@ -79,7 +80,7 @@ export default function PrivacyPolicy() {
                 <li>Device and usage data (IP, OS, app actions, crash logs)</li>
                 <li>Marketing consent preferences</li>
               </ul>
-              <p className="mt-3 text-sm text-secondary-600">
+              <p className="mt-3 text-sm text-[#4a7fa6]">
                 We do not collect payment data, identity documents, phone numbers, or real-time location.
               </p>
             </AnimatedSection>
@@ -110,10 +111,10 @@ export default function PrivacyPolicy() {
             {/* GDPR HIGHLIGHT */}
             <motion.div
               variants={fadeUp}
-              className="mt-12 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-200 p-8"
+              className="mt-12 rounded-2xl bg-gradient-to-br from-[#eaf4fb] to-white border border-[#b7daf3] p-8"
             >
-              <h3 className="text-lg font-semibold text-primary-700 mb-3">GDPR Fair-Processing Notice (Short Form)</h3>
-              <p className="text-sm text-secondary-700 leading-relaxed">
+              <h3 className="text-lg font-semibold text-[#1172af] mb-3">GDPR Fair-Processing Notice (Short Form)</h3>
+              <p className="text-sm text-[#1e6fa8] leading-relaxed">
                 Controller: Halvestor Limited · Purpose: Operate a free stock-market simulation app · Data: Name,
                 e-mail, password hash, device logs · Lawful basis: Consent & legitimate interest · Retention: 24 months
                 after last activity · Contact: privacy@halvestor.com
@@ -131,8 +132,8 @@ export default function PrivacyPolicy() {
 function AnimatedSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <motion.section variants={fadeUp}>
-      <h2 className="text-2xl font-semibold text-secondary-900 mb-3">{title}</h2>
-      <div className="text-secondary-700 leading-relaxed">{children}</div>
+      <h2 className="text-2xl font-semibold text-[#0b4f78] mb-3">{title}</h2>
+      <div className="text-[#1e6fa8] leading-relaxed">{children}</div>
     </motion.section>
   );
 }

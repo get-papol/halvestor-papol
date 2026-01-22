@@ -1,37 +1,43 @@
+import Link from 'next/link';
+
 const listItems = [
   {
-    title: `86% prefer alternatives to subscriptions`,
-    description: `Most respondents prefer anything other than a subscription-based model when it comes to investing platforms.`,
-    source: `Halvestor Survey Statistic`,
+    title: 'Sharia compliance changes without warning',
+    description:
+      'A stock that was compliant last quarter may become non-compliant after financial ratios update, leaving investors unaware until it is too late.',
+    source: 'Common Islamic finance screening challenge',
   },
   {
-    title: `Lack of transparency about companies`,
-    description: `"I have to constantly check the companies I'm investing in to make sure they don't have anything that is not permissible to my religion."`,
-    source: `Halvestor Survey Respondent`,
+    title: 'Unclear screening methodologies',
+    description:
+      'Different platforms apply different Sharia screening criteria, making it difficult for investors to understand why a stock is considered halal on one platform but not another.',
+    source: 'Islamic finance industry observation',
   },
   {
-    title: `Limited investment information`,
-    description: `"Not much info on founders/board members, who companies align themselves with or donate to."`,
-    source: `Halvestor Survey Respondent`,
+    title: 'Limited visibility into ETF and fund holdings',
+    description:
+      'Many halal-labelled ETFs do not clearly disclose underlying holdings in real time, making it hard to verify ongoing compliance.',
+    source: 'Ethical investing platform limitation',
   },
   {
-    title: `Difficulty identifying halal stocks`,
-    description: `"With certain platforms, you don't see which stocks are specifically being invested in."`,
-    source: `Halvestor Survey Respondent`,
+    title: 'Manual compliance research is time-consuming',
+    description:
+      'Investors often need to independently review balance sheets, income sources, and financial ratios just to confirm whether an investment meets Sharia requirements.',
+    source: 'Common investor experience',
   },
   {
-    title: `High fees and limited options`,
-    description: `"High deposit and withdrawal fees" and "Limited range of investments" are common concerns.`,
-    source: `Halvestor Survey Respondent`,
+    title: 'Revenue purification guidance is unclear',
+    description:
+      'Even when a stock is deemed compliant, guidance on purifying impure income portions is often missing or inconsistent across platforms.',
+    source: 'Islamic finance compliance gap',
   },
   {
-    title: `Complex compliance research`,
-    description: `"It's difficult to read through stocks and just focus on Shariah compliant stocks."`,
-    source: `Halvestor Survey Respondent`,
+    title: 'Lack of ongoing compliance monitoring',
+    description:
+      'Most platforms only screen at the point of purchase and do not actively alert investors when holdings drift out of Sharia compliance.',
+    source: 'Widely reported fintech shortcoming',
   },
 ];
-
-import Link from 'next/link';
 
 const ListSection = () => (
   <section id="features" className="lg:py-28 pt-28 bg-secondary-50">
@@ -40,7 +46,8 @@ const ListSection = () => (
         <h2 className="text-base text-primary-600 font-semibold uppercase">The Challenge</h2>
         <p className="mt-2 pb-4 text-4xl lg:text-6xl font-bold text-secondary-900">What’s the problem?</p>
         <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
-          Muslim investors face unique challenges when trying to invest according to their faith.
+          Muslim investors face structural and ongoing challenges when trying to invest in a way that remains aligned
+          with their faith.
         </p>
       </div>
 
@@ -62,12 +69,38 @@ const ListSection = () => (
       </div>
 
       {/* CTA */}
-      <div className="mt-16 text-center">
+      <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
         <Link
           href="/why-halvestor"
-          className="inline-flex items-center justify-center bg-primary-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition shadow-lg"
+          className="
+            inline-flex items-center justify-center
+            rounded-lg
+            bg-[#1172af]
+            px-8 py-4
+            text-base font-semibold
+            text-white
+            hover:bg-[#0e5f96]
+            transition
+          "
         >
           Why Halvestor Is Better
+        </Link>
+
+        <Link
+          href="/sharia-compliance"
+          className="
+            inline-flex items-center justify-center
+            rounded-lg
+            border-2 border-[#1172af]
+            px-8 py-4
+            text-base font-medium
+            text-[#1172af]
+            hover:bg-[#1172af]
+            hover:text-white
+            transition
+          "
+        >
+          Learn more about Sharia compliance
         </Link>
       </div>
     </div>
