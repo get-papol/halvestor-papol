@@ -1,101 +1,75 @@
-import { NextSeo } from 'next-seo';
-import Page from '@/components/page';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-/* ------------------ ANIMATIONS (TYPE-SAFE) ------------------ */
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const phoneFloat: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-};
-
-/* ------------------ PAGE ------------------ */
-
-export default function GetTheApp() {
+export default function Waitlist() {
   return (
-    <Page>
-      <NextSeo title="Get the App · Halvestor" />
+    <main className="min-h-screen bg-[#eaf4fb] flex items-center justify-center px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="max-w-xl w-full text-center bg-white rounded-2xl shadow-xl p-10"
+      >
+        {/* TITLE */}
+        <h1 className="text-3xl md:text-4xl font-bold text-[#0b4f78]">Join the Halvestor Waitlist</h1>
 
-      <main className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#eaf4fb' }}>
-        <section className="w-full max-w-5xl bg-white/95 backdrop-blur rounded-3xl shadow-xl px-10 py-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* LEFT: CONTENT */}
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.6 }}>
-              <h1 className="text-4xl font-semibold text-[#0b4f78] mb-4">Get the Halvestor App</h1>
+        {/* SUBTITLE */}
+        <p className="mt-4 text-lg text-[#1e6fa8]">
+          Be among the first to access a Sharia-compliant investing platform built on transparency, trust, and
+          faith-aligned principles.
+        </p>
 
-              <p className="text-lg text-[#1e6fa8] mb-6">
-                Invest with confidence using a platform built for Sharia-compliant and ethical investing — with
-                transparency and automation at its core.
-              </p>
+        {/* FORM */}
+        <form className="mt-8 space-y-4">
+          <input
+            type="email"
+            required
+            placeholder="Enter your email address"
+            className="
+              w-full
+              rounded-lg
+              border
+              border-[#cfe4f3]
+              px-4
+              py-3
+              text-base
+              focus:outline-none
+              focus:ring-2
+              focus:ring-[#1172af]
+            "
+          />
 
-              <ul className="space-y-3 text-[#0b4f78] mb-8">
-                <li>• Sharia-compliant stock screening</li>
-                <li>• Automatic purification & zakat calculation</li>
-                <li>• Certified compliance & full transparency</li>
-                <li>• Donate purified funds directly to charities</li>
-              </ul>
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            type="submit"
+            className="
+              w-full
+              rounded-lg
+              bg-[#1172af]
+              px-6
+              py-3
+              text-base
+              font-semibold
+              text-white
+              hover:bg-[#0e5f96]
+              transition
+            "
+          >
+            Secure My Spot
+          </motion.button>
+        </form>
 
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  disabled
-                  className="px-6 py-3 rounded-xl bg-[#9ac9e6] text-[#0b5f91] font-semibold cursor-not-allowed"
-                >
-                  Get the App on App Store
-                </button>
+        {/* TRUST TEXT */}
+        <p className="mt-6 text-sm text-[#4a7fa6]">No spam. Early access updates only.</p>
 
-                <button
-                  disabled
-                  className="px-6 py-3 rounded-xl bg-[#9ac9e6] text-[#0b5f91] font-semibold cursor-not-allowed"
-                >
-                  Get the App on Google Play
-                </button>
-              </div>
-
-              <p className="mt-4 text-sm text-[#6b8fa8]">App screenshots and download links will be available soon.</p>
-            </motion.div>
-
-            {/* RIGHT: ANIMATED APP PREVIEWS */}
-            <motion.div
-              variants={{
-                visible: {
-                  transition: { staggerChildren: 0.2 },
-                },
-              }}
-              initial="hidden"
-              animate="visible"
-              className="flex justify-center"
-            >
-              <div className="relative flex gap-6">
-                {/* PHONE 1 */}
-                <motion.div
-                  variants={phoneFloat}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
-                  whileHover={{ y: -8 }}
-                  className="w-40 h-80 rounded-3xl bg-gradient-to-b from-[#cfe6f5] to-[#9ac9e6] shadow-lg flex items-center justify-center text-sm text-[#0b4f78]"
-                >
-                  App Screen
-                </motion.div>
-
-                {/* PHONE 2 */}
-                <motion.div
-                  variants={phoneFloat}
-                  transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                  whileHover={{ y: -8 }}
-                  className="w-40 h-80 rounded-3xl bg-gradient-to-b from-[#cfe6f5] to-[#9ac9e6] shadow-lg flex items-center justify-center text-sm text-[#0b4f78] mt-8"
-                >
-                  App Screen
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-    </Page>
+        {/* BACK LINK */}
+        <div className="mt-6">
+          <Link href="/" className="text-sm font-medium text-[#1172af] hover:underline">
+            ← Back to Home
+          </Link>
+        </div>
+      </motion.div>
+    </main>
   );
 }

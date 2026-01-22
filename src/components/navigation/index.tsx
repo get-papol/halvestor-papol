@@ -1,5 +1,5 @@
-// src/components/navigation/index.tsx
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 
 const links = [
@@ -19,14 +19,24 @@ export default function Navigation() {
           className="
             flex items-center justify-between
             rounded-2xl
-            px-2 py-1
+            px-4 py-3
             bg-[#1172af]
             shadow-lg
           "
         >
-          {/* LOGO ONLY */}
+          {/* LOGO — MAX SIZE, MATCHES HEADER HEIGHT */}
           <Link href="/" className="flex items-center">
-            <img src="/logo.png.svg" alt="Halvestor" className="h-24 md:h-26 w-auto" />
+            <div
+              className="
+                w-48
+                h-24
+                flex
+                items-center
+                justify-center
+              "
+            >
+              <Image src="/logo.svg" alt="Halvestor" width={220} height={120} priority className="object-contain" />
+            </div>
           </Link>
 
           {/* NAV LINKS */}
@@ -36,7 +46,8 @@ export default function Navigation() {
                 key={l.label}
                 href={l.href}
                 className="
-                  px-2 py-2 rounded-full
+                  px-3 py-2
+                  rounded-full
                   text-sm font-medium
                   text-white/90
                   hover:text-white
@@ -50,33 +61,36 @@ export default function Navigation() {
           </nav>
 
           {/* ACTIONS */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* SIGN IN */}
             <Link
               href="/signin"
-              className="text-sm font-medium text-white/90 hover:text-white transition
-              rounded-lg
-              inline-flex items-center justify-center
-                rounded-lg
-                bg-[#1172af]
-                px-5 py-2.5
-                text-sm font-semibold
-                text-white
-                hover:bg-[#0e5f96]
-                transition"
+              className="
+                px-3 py-2
+                rounded-full
+                text-sm font-medium
+                text-white/90
+                hover:text-white
+                hover:bg-white/10
+                transition
+              "
             >
               Sign In
             </Link>
 
+            {/* PRIMARY CTA */}
             <Link
               href="/signup"
               className="
                 inline-flex items-center justify-center
-                rounded-lg
-                bg-[#1172af]
+                rounded-full
+                bg-[#e6f2fb]
                 px-5 py-2.5
                 text-sm font-semibold
-                text-white
-                hover:bg-[#0e5f96]
+                text-[#1172af]
+                ring-2 ring-white/40
+                shadow-md
+                hover:bg-[#d9ecfa]
                 transition
               "
             >
