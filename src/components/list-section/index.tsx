@@ -2,40 +2,40 @@ import Link from 'next/link';
 
 const listItems = [
   {
-    title: 'Sharia compliance changes without warning',
+    title: 'Sharia compliance can change after quarterly updates',
     description:
-      'A stock that was compliant last quarter may become non-compliant after financial ratios update, leaving investors unaware until it is too late.',
-    source: 'Common Islamic finance screening challenge',
+      'A stock may meet Sharia criteria today but fall out of compliance after financial ratios update, often without investor awareness.',
+    source: 'Islamic finance screening practice',
   },
   {
-    title: 'Unclear screening methodologies',
+    title: 'Different platforms apply different screening rules',
     description:
-      'Different platforms apply different Sharia screening criteria, making it difficult for investors to understand why a stock is considered halal on one platform but not another.',
+      'There is no single global standard for Sharia screening, leading to confusion when the same stock is labelled halal on one platform but not another.',
     source: 'Islamic finance industry observation',
   },
   {
-    title: 'Limited visibility into ETF and fund holdings',
+    title: 'Limited transparency into fund and ETF holdings',
     description:
-      'Many halal-labelled ETFs do not clearly disclose underlying holdings in real time, making it hard to verify ongoing compliance.',
+      'Many halal-labelled funds do not disclose real-time holdings, making ongoing compliance verification difficult.',
     source: 'Ethical investing platform limitation',
   },
   {
-    title: 'Manual compliance research is time-consuming',
+    title: 'Manual compliance checks require financial expertise',
     description:
-      'Investors often need to independently review balance sheets, income sources, and financial ratios just to confirm whether an investment meets Sharia requirements.',
+      'Investors often need to analyse balance sheets, debt ratios, and income sources themselves just to confirm Sharia alignment.',
     source: 'Common investor experience',
   },
   {
-    title: 'Revenue purification guidance is unclear',
+    title: 'Revenue purification guidance is often unclear',
     description:
-      'Even when a stock is deemed compliant, guidance on purifying impure income portions is often missing or inconsistent across platforms.',
+      'When minor non-compliant income exists, platforms rarely provide clear guidance on how much needs to be purified or how to calculate it.',
     source: 'Islamic finance compliance gap',
   },
   {
-    title: 'Lack of ongoing compliance monitoring',
+    title: 'Ongoing monitoring is rarely provided',
     description:
-      'Most platforms only screen at the point of purchase and do not actively alert investors when holdings drift out of Sharia compliance.',
-    source: 'Widely reported fintech shortcoming',
+      'Most platforms screen investments only at purchase and do not actively alert investors when holdings drift out of compliance.',
+    source: 'Widely reported fintech limitation',
   },
 ];
 
