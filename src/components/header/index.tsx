@@ -1,52 +1,36 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Hero() {
+export default function Header() {
   return (
-    <section
-      aria-label="Hero"
-      className="relative overflow-hidden py-24 md:py-32"
-      style={{ backgroundColor: '#eaf4fb' }}
-    >
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* HEADLINE */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0b4f78] leading-tight">
-          Invest According to Your Faith
-        </h1>
+    <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="Halvestor logo" width={120} height={32} priority />
+        </Link>
 
-        {/* SUBTEXT */}
-        <p className="mt-6 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-[#1e6fa8]">
-          The first platform designed for Sharia-compliant investing. Discover ethical investment opportunities with
-          clarity, transparency, and full compliance.
-        </p>
+        {/* NAV + CTA */}
+        <nav className="flex items-center gap-6">
+          <Link href="#features" className="text-sm font-medium text-gray-700 hover:text-[#3B82F6] transition">
+            Features
+          </Link>
 
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <Link href="#pricing" className="text-sm font-medium text-gray-700 hover:text-[#3B82F6] transition">
+            Pricing
+          </Link>
+
           <Link
             href="/signup"
-            className="inline-flex items-center justify-center rounded-lg bg-[#1172af] px-8 py-4 text-base font-semibold text-white hover:bg-[#0e5f96] transition"
+            className="inline-flex items-center justify-center rounded-xl bg-[#3B82F6] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#2563EB] transition-colors shadow-sm"
           >
-            Join the Waitlist
+            Get the App
           </Link>
-
-          <a
-            href="#features"
-            className="inline-flex items-center justify-center rounded-lg border-2 border-[#1172af] px-8 py-4 text-base font-medium text-[#1172af] hover:bg-[#1172af] hover:text-white transition"
-          >
-            Learn More
-          </a>
-        </div>
-
-        {/* TRUST LINK — NEW */}
-        <div className="mt-8">
-          <Link href="/sharia-compliance" className="text-sm font-medium text-[#1172af] hover:underline">
-            Read more about Sharia-compliant investing →
-          </Link>
-        </div>
-
-        {/* FOOTNOTE */}
-        <p className="mt-10 text-sm text-[#4a7fa6]">Built for those seeking ethical and Sharia-aligned investing</p>
+        </nav>
       </div>
-    </section>
+    </header>
   );
 }
